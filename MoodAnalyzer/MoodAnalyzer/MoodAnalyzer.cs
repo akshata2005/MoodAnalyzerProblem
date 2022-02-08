@@ -9,16 +9,21 @@ namespace MoodAnalyzer
     public class MoodAnalyzer
     {
         public string message; //instance variable
-        public MoodAnalyzer (string message)
+        public MoodAnalyzer(string message)
         {
             this.message = message;
         }
-    }
-    public string Analyzer()//
-    {
-        if(this.message.ToLower().Contains("happy"))
+        public string Analyzer()  //Analyzer method find mood
         {
-            return "happy";
+            if (this.message.ToLower().Contains("happy"))
+            {
+                return "happy";
+            }
+            else
+            {
+                return "sad";
+            }
         }
     }
+    
 }
