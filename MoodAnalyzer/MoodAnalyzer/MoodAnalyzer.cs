@@ -13,16 +13,28 @@ namespace MoodAnalyzer
         {
             this.message = message;
         }
+        //uc-2 handling exceptions
         public string Analyzer()  //Analyzer method find mood
         {
-            if (this.message.ToLower().Contains("happy"))
+            try
             {
+
+
+                if (this.message.ToLower().Contains("happy"))
+                {
+                    return "happy";
+                }
+                else
+                {
+                    return "sad";
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
                 return "happy";
             }
-            else
-            {
-                return "sad";
-            }
+
         }
     }
     

@@ -39,5 +39,37 @@ namespace MoodAnalyzerTestcase
             Assert.AreEqual(expected, Actual);
 
         }
+        [TestMethod]
+        [TestCategory("Sad Mood")]
+        public void TestMethodAnalayzerForNull()
+        {
+            ///AAA methodology
+            ///arrange
+            string message = "Im in sad mood";
+            string expected = "sad";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
+
+            //Act
+            string Actual = moodAnalyzer.Analyzer();
+
+            //Assert
+            Assert.AreEqual(expected, Actual);
+        }
+        [TestMethod]
+        [TestCategory("null case")]
+        public void GivenNullReturnHappyMood()
+        {
+            ///AAA methodology
+            ///arrange
+            string message = null;
+            string expected = "happy";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
+
+            //Act
+            string Actual = moodAnalyzer.Analyzer();
+
+            //Assert
+            Assert.AreEqual(expected, Actual);
+        }
     }
 }
